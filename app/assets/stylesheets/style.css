@@ -144,7 +144,7 @@ body {
     color:#8e8071;
 	font-size:13px;
 	position:relative;
-    background: #aa8a6e url(images/bg.jpg) center top repeat;
+    background: #aa8a6e url(bg.jpg) center top repeat;
     background-size: 100% 100%;
 }
 ::-moz-selection {
@@ -583,12 +583,12 @@ p{
 }
 
 .btn-left, .btn-right{
-    background-image: url(images/buttons.png) !important;
+    background-image: url(buttons.png) !important;
 }
 .btn-left span, .btn-left input,
 .btn-right span, .btn-right input{
     filter:none !important;
-    background-image: url(images/buttons.png) !important;
+    background-image: url(buttons.png) !important;
     background-repeat: no-repeat;
     -webkit-box-shadow: none !important;
     -moz-box-shadow: none !important;
@@ -614,7 +614,7 @@ p{
 .btn-icon i{
     width: 19px;
     height: 19px;
-    background: url(images/icons/sign-in.png) 0 0 no-repeat;
+    background: url(/assets/icons/sign-in.png) 0 0 no-repeat;
     vertical-align: middle;
     margin-right: 13px;
 }
@@ -643,13 +643,13 @@ p{
     color:#8e8071;
     background-repeat:no-repeat;
     background-position:0 0;
-    background-image: url(images/styled_checkbox.png);
+    background-image: url(styled_checkbox.png);
 }
 .custom-radio label {
     height:24px;
     line-height:24px;
     margin-bottom:11px;
-    background-image: url(images/styled_radiobutton.png);
+    background-image: url(styled_radiobutton.png);
 }
 .custom-checkbox label.checked,.custom-radio label.checked {
     background-position:0 -100px;
@@ -660,14 +660,14 @@ p{
     height: 26px;
     line-height: 26px;
     padding-left:65px;
-    background-image: url(images/styled_checkbox_large.png);
+    background-image: url(styled_checkbox_large.png);
 }
-.checkbox-large.checkbox-white .custom-checkbox label{background-image: url(images/styled_checkbox_large2.png);}
-.checkbox-large.checkbox-noText .custom-checkbox label{background-image: url(images/styled_checkbox_large3.png);}
-.checkbox-red .custom-checkbox label{background-image: url(images/styled_checkbox2.png);}
-.checkbox-filled .custom-checkbox label{background-image: url(images/styled_checkbox3.png);}
-.radio-red .custom-radio label{background-image: url(images/styled_radiobutton2.png);}
-.radio-filled .custom-radio label{background-image: url(images/styled_radiobutton3.png);}
+.checkbox-large.checkbox-white .custom-checkbox label{background-image: url(styled_checkbox_large2.png);}
+.checkbox-large.checkbox-noText .custom-checkbox label{background-image: url(styled_checkbox_large3.png);}
+.checkbox-red .custom-checkbox label{background-image: url(styled_checkbox2.png);}
+.checkbox-filled .custom-checkbox label{background-image: url(styled_checkbox3.png);}
+.radio-red .custom-radio label{background-image: url(styled_radiobutton2.png);}
+.radio-filled .custom-radio label{background-image: url(styled_radiobutton3.png);}
 
 /*-----------------------------------*/
 /* Ribbons */
@@ -679,7 +679,7 @@ p{
     display: inline-block;
     width:56px;
 	padding-bottom:20px;
-	background-image:url(images/ribbons.png);
+	background-image:url(ribbons.png);
 	background-repeat: no-repeat;
 	background-position: -60px bottom;
     position: relative;
@@ -689,7 +689,7 @@ p{
 	display:block;
     width:56px;
 	padding-top:16px;
-	background-image:url(images/ribbons.png);
+	background-image:url(ribbons.png);
 	background-repeat: no-repeat;
 	background-position: 0 top;
 }
@@ -722,7 +722,7 @@ p{
     position: relative;
     width:59px;
     height:59px;
-    background-image:url(images/badge.png);
+    background-image:url(badge.png);
     background-repeat: no-repeat;
     background-position: 0 0;
     padding: 0;
@@ -736,7 +736,7 @@ p{
 .badge.badge-large{
     width:76px;
     height:75px;
-    background-image:url(images/badge-large.png);
+    background-image:url(badge-large.png);
 }
 
 /*-----------------------------------*/
@@ -747,7 +747,7 @@ p{
 	display: inline-block;
 	width: 116px;
 	height: 18px;
-	background-image:url(images/icons/rating.png);
+	background-image:url(/assets/icons/rating.png);
 	background-repeat: no-repeat;
 	background-position: center 0;
     margin-top: 2px;
@@ -760,10 +760,10 @@ p{
 
 .rating {display: inline-block; width: 125px; margin-bottom: 18px;}
 .rating span.star{display:inline-block; width:20px; height:18px; margin-right: 4px; background-repeat: no-repeat;}
-.rating span.off{background-image: url(images/icons/star_off.png);}
+.rating span.off{background-image: url(/assets/icons/star_off.png);}
 .rating span.on,
 .rating span.star:hover,
-.rating span.over{background-image: url(images/icons/star_on.png); cursor:pointer;}
+.rating span.over{background-image: url(/assets/icons/star_on.png); cursor:pointer;}
 
 /*===================================================*/
 /* 2. PAGE ITEMS, WIDGETS */
@@ -873,7 +873,7 @@ p{
     text-indent: -1000px;
 }
 .team_link {
-    background-image:url(images/icons/team-contact.png);
+    background-image:url(/assets/icons/team-contact.png);
     background-repeat: no-repeat;
     background-position: 0 0;
     opacity:.8;
@@ -1160,7 +1160,7 @@ p{
     margin: 0;
     width:20px;
 	height:20px;
-	background-image:url(images/icons/categories_icons.png);
+	background-image:url(/assets/icons/categories_icons.png);
 }
 
 .widget_categories .ico-cat.ico-cat1{background-position: 0 0;}
@@ -1220,7 +1220,7 @@ p{
 	display:inline-block;
 	font-size:12px;
 	white-space:nowrap;
-	background-image:url(images/tag.png);
+	background-image:url(tag.png);
 	background-repeat:no-repeat;
 	background-position:right -30px;
 	height: 28px;
@@ -1233,7 +1233,7 @@ p{
 
 .tagcloud a span{
 	display:block;
-	background-image:url(images/tag.png);
+	background-image:url(tag.png);
 	background-repeat:no-repeat;
 	background-position:left 0;
 	padding-left:26px;
@@ -1304,7 +1304,7 @@ p{
 .widget-join .icon-join{
     width: 45px;
     height: 46px;
-    background: url(images/icons/join-icon.png) no-repeat;
+    background: url(/assets/icons/join-icon.png) no-repeat;
     vertical-align: middle;
     margin-right: 27px;
 }
@@ -1331,7 +1331,7 @@ p{
 .widget-twitter .icon-twitter{
     width: 53px;
     height: 52px;
-    background: url(images/icons/twitter-icon.png) no-repeat;
+    background: url(/assets/icons/twitter-icon.png) no-repeat;
     vertical-align: middle;
     margin-right: 16px;
 }
@@ -1373,7 +1373,7 @@ p{
     display: block;
     padding: 36px 31px 39px 60px;
     border-right: 1px solid #F4ECE7;
-    background: url(images/portfolio-filter.png) 27px 35px no-repeat;
+    background: url(portfolio-filter.png) 27px 35px no-repeat;
     font-size: 19px;
     color: #8e8071;
     letter-spacing: -1px;
@@ -1417,7 +1417,7 @@ p{
     z-index: 2;
     width: 56px;
     height: 54px;
-    background-image: url(images/icons/post_label.png);
+    background-image: url(/assets/icons/post_label.png);
     background-repeat: no-repeat;
     background-position: center 0;
 }
@@ -1505,7 +1505,7 @@ p{
 .icon-post{
     width: 25px;
     height: 25px;
-    background-image: url(images/icons/post-icons.png);
+    background-image: url(/assets/icons/post-icons.png);
     background-repeat: no-repeat;
     background-position: 0 0;
     vertical-align: middle;
@@ -1578,7 +1578,7 @@ p{
 .post-item.style3 .icon-post{
     width: 30px;
     height: 25px;
-    background-image: url(images/icons/post-icons2.png);
+    background-image: url(/assets/icons/post-icons2.png);
     background-repeat: no-repeat;
     background-position: 0 0;
     margin:0;
@@ -1624,7 +1624,7 @@ p{
 .icon-post2{
     width: 20px;
     height: 20px;
-    background-image: url(images/icons/posted.png);
+    background-image: url(/assets/icons/posted.png);
     background-repeat: no-repeat;
     background-position: 0 0;
     vertical-align: middle;
@@ -1713,7 +1713,7 @@ p{
 }
 .carousel-control.left,
 .carousel-control.right{
-    background-image:url(images/post_image_controls.png);
+    background-image:url(post_image_controls.png);
     background-position: 0 0;
     background-color: transparent;
     background-repeat: no-repeat;
@@ -1881,7 +1881,7 @@ p{
 	position: absolute;
 	top:6px;
 	left:56px;
-	background: url(images/comment_sub.png) no-repeat;
+	background: url(comment_sub.png) no-repeat;
 }
 .comment-body {
     padding: 28px 34px 30px 160px;
@@ -2115,7 +2115,7 @@ input[type="password"]:focus{
 .payment-form .card_code{position: relative;}
 .payment-form .card_code input{padding-right: 90px;}
 .payment-form .card_code .input_icon{
-	background:url(images/icons/security_code.png);
+	background:url(/assets/icons/security_code.png);
 	width: 74px;
 	height: 23px;
 }
@@ -2160,7 +2160,7 @@ input[type="password"]:focus{
 	font-size: 13px;
     line-height: 16px;
     padding-left: 20px;
-	background: url(images/icons/rss.png) no-repeat;
+	background: url(/assets/icons/rss.png) no-repeat;
 }
 .newsletterBox .link-news-rss span{color: #e7613c; text-decoration: underline;}
 
@@ -2237,7 +2237,7 @@ input[type="password"]:focus{
     display: inline-block;
     width:8px;
     height:10px;
-    background: transparent url(images/pagination.png) no-repeat 0 center;
+    background: transparent url(pagination.png) no-repeat 0 center;
 }
 .tf_pagination .page_next span {
     background-position: -10px center;
@@ -2507,7 +2507,7 @@ input[type="password"]:focus{
 .toggle-link i{
     width: 22px;
     height: 22px;
-    background-image: url(images/toggle_mark.png);
+    background-image: url(toggle_mark.png);
     background-repeat: no-repeat;
     background-position: center bottom;
     position: absolute;
@@ -2593,7 +2593,7 @@ input[type="password"]:focus{
     z-index: 2;
     width: 54px;
     height: 56px;
-    background-image: url(images/icons/infobox_label.png);
+    background-image: url(/assets/icons/infobox_label.png);
     background-repeat: no-repeat;
     background-position: center 0;
     margin: 0;
@@ -2652,7 +2652,7 @@ input[type="password"]:focus{
     color: #8e8071;
 }
 .widget_adv_filter .input_date .input_icon{
-    background:url(images/icons/calendar.png) no-repeat;
+    background:url(/assets/icons/calendar.png) no-repeat;
     width: 20px;
     height: 20px;
     top: 10px;
@@ -2909,7 +2909,7 @@ input[type="password"]:focus{
     width: 39px;
     height: 38px;
     overflow: hidden;
-    background: url(images/icons/social-icons.png) 0 0 no-repeat;
+    background: url(/assets/icons/social-icons.png) 0 0 no-repeat;
     -webkit-border-radius: 50%;
     -moz-border-radius: 50%;
     border-radius: 50%;
@@ -2975,7 +2975,7 @@ input[type="password"]:focus{
     width: 30px;
     height: 30px;
     vertical-align: middle;
-    background: url(images/icons/menu-icons.png) 0 0 no-repeat;
+    background: url(/assets/icons/menu-icons.png) 0 0 no-repeat;
     margin-right: 10px;
 }
 .icon-menu.icon-menu2 {background-position: 0 -30px;}
@@ -3077,7 +3077,7 @@ input[type="password"]:focus{
     position: absolute;
     top:15px;
     right:8px;
-    background: url(images/menu-arrow.png) no-repeat;
+    background: url(menu-arrow.png) no-repeat;
 }
 
 /* Level 2+ */
@@ -3176,7 +3176,7 @@ input[type="password"]:focus{
     z-index: 2;
     width: 47px;
     border-right: 1px solid #E5D4C2;
-    background-image: url(images/icons/input-icons.png);
+    background-image: url(/assets/icons/input-icons.png);
     background-color: #f8ece4;
     background-repeat: no-repeat;
     background-position: 0 0;
@@ -3211,7 +3211,7 @@ input[type="password"]:focus{
 .widget_login.styled .rowSocial i{
     width: 15px;
     height: 15px;
-    background: url(images/icons/facebook.png) 0 0 no-repeat;
+    background: url(/assets/icons/facebook.png) 0 0 no-repeat;
     margin-right: 5px;
     vertical-align: top;
 }
@@ -3658,7 +3658,7 @@ input[type="password"]:focus{
     -webkit-box-shadow: none;
     -mox-box-shadow: none;
     box-shadow: none;
-    background: url(images/trade-header.png);
+    background: url(trade-header.png);
     background-size: 100% 100%;
     height:160px;
     padding: 18px;
@@ -3674,7 +3674,7 @@ input[type="password"]:focus{
 .widget-trade .trade-rate{
     font-size: 24px;
     color: #fff;
-    background: url(images/trade-dir.png) 0 15px no-repeat;
+    background: url(trade-dir.png) 0 15px no-repeat;
 }
 .widget-trade .trade-rate-down{background-position: 0 -87px;}
 
@@ -3753,7 +3753,7 @@ input[type="password"]:focus{
     display: block;
     height: 66px;
     overflow: hidden;
-    background: url(images/icons/social-icons2.png) center 0 no-repeat;
+    background: url(/assets/icons/social-icons2.png) center 0 no-repeat;
 }
 .widget-social .social-pinterest {background-position: center -66px;}
 .widget-social .social-twitter {background-position: center -132px;}
@@ -3798,7 +3798,7 @@ input[type="password"]:focus{
     padding-right: 63px;
     height: 45px;
     line-height: 45px;
-    background: url(images/icons/weather-air.png) right 0 no-repeat;
+    background: url(/assets/icons/weather-air.png) right 0 no-repeat;
 }
 @media (min-width: 768px) and (max-width: 991px){
     .widget-weather .air-temp strong{font-size: 36px;}
@@ -3809,7 +3809,7 @@ input[type="password"]:focus{
     font-size: 28px;
     color: #64584c;
     padding-bottom: 22px;
-    background: url(images/icons/weather-icons.png) left bottom no-repeat;;
+    background: url(/assets/icons/weather-icons.png) left bottom no-repeat;;
 }
 .widget-weather .wind-speed strong{background-position: right bottom;}
 
@@ -3922,7 +3922,7 @@ input[type="password"]:focus{
     margin-bottom: 5px;
     width: 31px;
     height: 25px;
-    background: url(images/icons/stats-icons.png) 0 0 no-repeat;
+    background: url(/assets/icons/stats-icons.png) 0 0 no-repeat;
 }
 .stats-icon.stats-icon2{background-position: 0 -25px;}
 .stats-icon.stats-icon3{background-position: 0 -50px;}

@@ -110,7 +110,7 @@
     height: auto !important;
     cursor: text;
     padding-right: 44px;
-    background: url(../images/icons/plus.png) right top no-repeat;
+    background: url(/assets/icons/plus.png) right top no-repeat;
 }
 .chzn-container-multi .chzn-choices li {
     float: left;
@@ -158,7 +158,7 @@
     display: block;
     width: 9px;
     height: 9px;
-    background: url('../images/chosen-close.png') center center no-repeat;
+    background: url(chosen-close.png) center center no-repeat;
     font-size: 1px;
     opacity: .5;
 }
