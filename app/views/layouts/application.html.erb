@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Spms</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <!--[if (gt IE 9)|!(IE)]><!--><html lang="en" class="no-js"> <!--<![endif]-->
+<meta charset="utf-8">
+<meta name="author" content="ThemeFuse">
+<meta name="keywords" content="">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SPMS | Dashboard</title>
+
+<!-- main JS libs -->
+<script src="js/libs/modernizr.min.js"></script>
+<script src="js/libs/jquery-1.10.0.js"></script>
+<script src="js/libs/jquery-ui.min.js"></script>
+<script src="js/libs/bootstrap.min.js"></script>
+
+<!-- Style CSS -->
+<link href="css/bootstrap.css" media="screen" rel="stylesheet">
+<link href="style.css" media="screen" rel="stylesheet">
+
+<!-- scripts -->
+<script src="js/general.js"></script>
+<!-- styled select -->
+<link rel="stylesheet" href="css/cusel.css">
+<script src="js/cusel-min.js"></script>
+<!-- custom input -->
+<script src="js/jquery.customInput.js"></script>
+<script type="text/javascript" src="js/custom.js"></script>
+<!-- Placeholders -->
+<script type="text/javascript" src="js/jquery.powerful-placeholder.min.js"></script>
+<!-- Progress Bars -->
+<script src="js/progressbar.js"></script>
+<!-- Calendar -->
+<link href="css/jquery-ui-1.8.20.custom.css" rel="stylesheet">
+<script src="js/jquery-ui.multidatespicker.js"></script>
+<!-- Graph Builder -->
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+<script type="text/javascript">
+    google.load("visualization", "1", {packages:["corechart"]});
+    google.setOnLoadCallback(drawChart);
+    function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+            ['Media', 'GB'],
+            ['Audio', 1100],
+            ['Video', 460],
+            ['Photo', 340],
+            ['Other', 100]
+        ]);
+
+        var options = {
+            pieHole: 0.4,
+            legend: 'none',
+            pieSliceText: 'none',
+            width: 220,
+            height: 220,
+            slices: {0: {color: '#4daf7b'}, 1: {color: '#e6623d'}, 2: {color: '#ebc85e'}, 3: {color: '#f4ede7'}},
+            chartArea:{left:"10px", top:"10px", width:"92%", height:"92%"}
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('donutchart'));
+        chart.draw(data, options);
+
+        var data2 = google.visualization.arrayToDataTable([
+            ['Month', 'Traffic'],
+            ['June',  1100],
+            ['July',  1580],
+            ['August',  1300],
+            ['September',  1430]
+        ]);
+
+        var options2 = {
+            width: 220,
+            height: 220,
+            legend: 'none',
+            colors: ['#4daf7b'],
+            chartArea:{left:0, top:0, width:"100%", height:"100%"},
+            hAxis:{textPosition:"none", gridlines:{color:"#fff"}, baselineColor:"#4daf7b"},
+            vAxis:{textPosition:"none", gridlines:{color:"#fff"}, baselineColor:"#4daf7b"}
+        };
+
+        var chart2 = new google.visualization.ColumnChart(document.getElementById('columnchart'));
+        chart2.draw(data2, options2);
+    }
+</script>
+<!-- range sliders -->
+<script src="js/jquery.slider.bundle.js"></script>
+<script src="js/jquery.slider.js"></script>
+<link rel="stylesheet" href="css/jslider.css">
+<!-- Video Player -->
+<link href="css/video-js.css" rel="stylesheet">
+<script src="js/video.js"></script>
+<!-- Audio Player -->
+<link href="css/jplayer.css" rel="stylesheet">
+<script src="js/jquery.jplayer.min.js"></script>
+<script src="js/jplayer.playlist.min.js"></script>
+
+<!-- Scroll Bars -->
+<script src="js/jquery.mousewheel.js"></script>
+<script src="js/jquery.jscrollpane.min.js"></script>
+<script type="text/javascript">
+  jQuery(function()
+  {
+    jQuery('.scrollbar').jScrollPane({
+      verticalDragMaxHeight: 9,
+      verticalDragMinHeight:9
+    });
+
+    jQuery('.scrollbar.scrollbar-yellow').jScrollPane({
+      verticalDragMaxHeight: 20,
+      verticalDragMinHeight:20
+    });
+
+    jQuery('.scrollbar.scrollbar-red').jScrollPane({
+      verticalDragMaxHeight: 5,
+      verticalDragMinHeight:5
+    });
+
+    jQuery('.scrollbar.scrollbar-blue').jScrollPane({
+      verticalDragMaxHeight: 50,
+      verticalDragMinHeight:50
+    });
+  });
+</script>
+
+<!-- Multiselect -->
+<link rel="stylesheet" href="/stylesheets/chosen.css">
+<script src="/javascripts/jquery.chosen.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+    jQuery(document).ready(function() {
+        jQuery('#contact_name').chosen({ width: "100%" });
+    });
+</script>
+
+<!--[if lt IE 9]><script src="js/respond.min.js"></script><![endif]-->
+<!--[if gte IE 9]>
+<style type="text/css">
+    .gradient {filter: none !important;}
+</style>
+<![endif]-->
+  </head>
+
+  <body>
+    <%= yield %>
+  </body>
+</html>
