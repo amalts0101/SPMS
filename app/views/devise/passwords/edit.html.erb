@@ -1,0 +1,97 @@
+<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
+  <%= f.hidden_field :reset_password_token %>
+<body>
+    <!-- Widget caption -->
+    <div class="widget-full-width widget-caption boxed no-radius">
+        <!-- container-->
+        <div class="container">
+            <!-- row-->
+            <div class="row">
+                <div class="col-sm-3"><div class="tab_image pull-right"><img src="/assets/logosquare.png" alt=""></div></div>
+                <div class="col-sm-9">
+                    <h1>We make tracking your time easier!</h1>
+                    <h2>Welcome to the Secondary Project Management System</h2>
+                </div>
+            </div>
+            <!--/ row-->
+        </div>
+        <!--/ container-->
+    </div>
+    <!--/ Widget caption -->
+
+<div class="container container-wide">
+
+    <!-- content -->
+    <div class="content " role="main">
+        <!-- row -->
+        <div class="row">
+            <div class="col-sm-12">
+
+                <!-- row level 2 -->
+                <div class="row">
+                    <div class="col-sm-3"></div>
+                    <div class="col-sm-6">
+
+                        <!-- login widget -->
+                        <div class="widget-container widget_login styled boxed">
+                            <form action="#" method="post" id="loginform" class="loginform">
+                                <div class="inner">
+                                    <%= render "devise/shared/error_messages", resource: resource %>
+                                     <% if flash.alert %>
+                                       <div id=”error_explanation”>
+                                        <ul>
+                                         <li><%= flash.alert %></li>
+                                        </ul>
+                                       </div>
+                                      <% end %> 
+                                    <h6>Change your password</h6>
+                                   <div class="field_text">
+                                        <label for="user_pass" class="label_title">New Password <em>(<%= @minimum_password_length %> characters minimum)</em></label>
+                                            <%= f.password_field :password, autocomplete: "current-password" %>
+                                        <span class="input_icon input_pass"></span>
+                                    </div>
+                                    <div class="field_text">
+                                        <label for="user_pass_confirm" class="label_title">Confirm Password</label>
+                                            <%= f.password_field :password_confirmation, autocomplete: "current-password" %>
+                                        <span class="input_icon input_pass"></span>
+                                    </div>
+                                </div>
+                                <div class="rowSubmit">
+                                <a href="javascript:$('form').submit()" class="btn btn-icon"><span id="login-submit"><i></i>Change my Password</span></a>
+                                <%= render "devise/shared/links" %>
+                                </div>
+                            </form>
+                        </div>
+                        <!--/ login widget -->
+
+                        
+                    </div>
+                </div>
+                <!--/ row level 2 -->
+            </div>
+        </div>
+
+    </div>
+    <!--/ content -->
+</div>
+<!--/ container -->
+
+<!-- Widget Partners -->
+    <div class="widget-full-width widget-partners boxed no-radius">
+        <!-- container-->
+        <div class="container">
+            <!-- row-->
+            <div class="row">
+                <div class="col-sm-12">
+                    <ul>
+                        <li><a href="#"><img src="/assets/ruby-logo.png" alt="" /></a></li>
+                    </ul>
+                </div>
+            </div>
+            <!--/ row-->
+        </div>
+        <!--/ container-->
+    </div>
+    <!--/ Widget Partners -->
+        </body>
+<%end%>
