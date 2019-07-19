@@ -1,5 +1,3 @@
-<body>
-
 <div class="container container-wide">
 
     <!-- content -->
@@ -11,7 +9,7 @@
                 <div id="topmenu">
                     <ul class="dropdown clearfix boxed">
                         <li class="menu-level-0"><a href="forms.html"><i class="icon-menu"></i><span>projects</span><sup class="note">3</sup></a></li>
-                        <li class="menu-level-0"><a href="#"><i class="icon-menu icon-menu2"></i><span>activities</span></a> </li>
+                        <li class="menu-level-0"><a href='activities/index'><i class="icon-menu icon-menu2"></i><span>activities</span></a> </li>
                         <li class="menu-level-0"><a href="#"><i class="icon-menu icon-menu3"></i><span>sheets</span></a>
                             <ul class="submenu-1">
                                 <li class="menu-level-1"><a href="#">Web design</a></li>
@@ -66,25 +64,27 @@
                         <!-- Contact form -->
                         <div class="add-comment styled boxed" id="addcomments">
                             <div class="comment-form">
-                                <form action="#" method="post" id="commentForm" class="ajax_form">
+                                <%= form_for Activity.new do |form| %>
                                     <div class="form-inner">
                                         <div class="field_select">
-                                            <label for="contact_name" class="label_title">Add Activity</label>
-                                            <select name="contact_name" id="contact_name" multiple data-placeholder="Tag a Project">
-                                                <option value='Hello@me.com'>SuccessDart</option>
-                                                <option value='Andy@me.com'>BizDart</option>
-                                                <option value='info@ex.com'>IrisTutor</option>
-                                                <option value='John@ex.com'>Reditum</option>
-                                                <option value='Doe@ex.com'>Factum</option>
-                                            </select>
+                                            <label class="label_title"><i class="icon-menu icon-menu6"></i>ADD ACTIVTIY</label>
                                         </div>
-                                        <p></p>
                                         <div class="field_text">
-                                            <input type="text" name="subject" id="subject" value="" placeholder="Add Hours" class="inputtext input_middle required" />
+                                            <%= form.select(:project_id, Project.pluck(:project_name, :id)) %>
                                         </div>
+                                    
+                                        
+                                        <div class="field_text input_date adv_block">
+                                           <input type="text" name="filter_date_in" class="inputField inputDate" value="Select Date" onfocus="if (this.value == 'Check in') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Check in';}" id="filter_date_in">
+                                           <span class="input_icon"></span>
+                                       </div>
+                                        <div class="field_text"> 
+                                            <%= form.text_field :hours, placeholder: 'Add hours'%>
+                                        </div>
+                                        
                                         <div class="clear"></div>
                                         <div class="field_text field_textarea">
-                                            <textarea cols="30" rows="10" name="styled_message" id="styled_message" placeholder="Add Comments" class="textarea textarea_middle required"></textarea>
+                                            <%= form.text_field :name, placeholder: 'Add Activity'%>
                                         </div>
                                         <div class="clear"></div>
                                     </div>
@@ -95,7 +95,8 @@
                                         </div>
                                         <span class="btn"><input type="submit" id="send" value="Save" /></span>
                                     </div>
-                                </form>
+                                    
+                                <%end%>
                             </div>
                         </div>
                         <!--/ Contact form -->
@@ -126,6 +127,7 @@
                                     });
                                     // ]]>
                                 </script>
+
                             </div>
                         </div>
                         <!--/ widget calendar-->
@@ -182,5 +184,12 @@
     <!--/ content -->
 </div>
 <!--/ container -->
-
-</body>
+<script>
+   jQuery(document).ready(function($) {
+       $("#filter_date_in").datepicker({
+           dateFormat: 'MM dd, yy',
+           minDate: 0,
+           showOtherMonths: true
+       });
+   });
+</script>
