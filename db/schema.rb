@@ -16,11 +16,15 @@ ActiveRecord::Schema.define(version: 2019_07_19_073122) do
   enable_extension "plpgsql"
 
   create_table "activities", force: :cascade do |t|
-    t.string "activity_name"
-    t.string "hours"
-    t.string "comments"
+    t.string "name"
+    t.decimal "hours", precision: 10, scale: 2
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.datetime "date"
+    t.bigint "user_id"
+    t.bigint "project_id"
+    t.index ["project_id"], name: "index_activities_on_project_id"
+    t.index ["user_id"], name: "index_activities_on_user_id"
   end
 
   create_table "projects", force: :cascade do |t|
@@ -44,4 +48,6 @@ ActiveRecord::Schema.define(version: 2019_07_19_073122) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "activities", "projects"
+  add_foreign_key "activities", "users"
 end
