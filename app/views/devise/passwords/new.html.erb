@@ -1,0 +1,92 @@
+<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+
+<body>
+    <!-- Widget caption -->
+    <div class="widget-full-width widget-caption boxed no-radius">
+        <!-- container-->
+        <div class="container">
+            <!-- row-->
+            <div class="row">
+                <div class="col-sm-3"><div class="tab_image pull-right"><img src="/assets/logosquare.png" alt=""></div></div>
+                <div class="col-sm-9">
+                    <h1>We make tracking your time easier!</h1>
+                    <h2>Welcome to the Secondary Project Management System</h2>
+                </div>
+            </div>
+            <!--/ row-->
+        </div>
+        <!--/ container-->
+    </div>
+    <!--/ Widget caption -->
+
+<div class="container container-wide">
+
+    <!-- content -->
+    <div class="content " role="main">
+        <!-- row -->
+        <div class="row">
+            <div class="col-sm-12">
+
+                <!-- row level 2 -->
+                <div class="row">
+                    <div class="col-sm-3"></div>
+                    <div class="col-sm-6">
+
+                        <!-- login widget -->
+                        <div class="widget-container widget_login styled boxed">
+                            <form action="#" method="post" id="loginform" class="loginform">
+                                <div class="inner">
+                                    <%= render "devise/shared/error_messages", resource: resource %>
+                                     <% if flash.alert %>
+                                       <div id=”error_explanation”>
+                                        <ul>
+                                         <li><%= flash.alert %></li>
+                                        </ul>
+                                       </div>
+                                      <% end %> 
+                                    <h6>Forgot your Password?</h6>
+                                    <div class="field_text">
+                                        <label for="user_login" class="label_title">Email</label>
+                                            <%= f.text_field :email, autofocus: true, autocomplete: "email" %>
+                                        <span class="input_icon input_email"></span>
+                                    </div>
+                                </div>
+                                <div class="rowSubmit">
+                                <%= f.submit "Send me reset password instructions" %>
+                                <p></p>
+                                <%= render "devise/shared/links" %>
+                                </div>
+                            </form>
+                        </div>
+                        <!--/ login widget -->
+
+                        
+                    </div>
+                </div>
+                <!--/ row level 2 -->
+            </div>
+        </div>
+         </div>
+    <!--/ content -->
+</div>
+<!--/ container -->
+
+<!-- Widget Partners -->
+    <div class="widget-full-width widget-partners boxed no-radius">
+        <!-- container-->
+        <div class="container">
+            <!-- row-->
+            <div class="row">
+                <div class="col-sm-12">
+                    <ul>
+                        <li><a href="#"><img src="/assets/ruby-logo.png" alt="" /></a></li>
+                    </ul>
+                </div>
+            </div>
+            <!--/ row-->
+        </div>
+        <!--/ container-->
+    </div>
+    <!--/ Widget Partners -->
+        </body>
+<% end %>
