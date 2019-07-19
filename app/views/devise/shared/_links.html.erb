@@ -1,9 +1,23 @@
 <%- if controller_name != 'sessions' %>
-  <%= link_to "Log in", new_session_path(resource_name) %><br />
+<div class="rowRemember">
+      <div class="forgetmenot input_styled checklist">
+          <div class="rowCheckbox"><input type="checkbox" name="remember" id="remember" value="3" checked><label for="remember">Remember&nbsp;me?</label></div>
+      </div>
+      <span class="forget_password"><%= link_to "Log in", new_session_path(resource_name) %><br /></span>
+      <input type="hidden" name="redirect_to" value="">
+      <input type="hidden" name="testcookie" value="1">
+  </div>
 <% end %>
 
 <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
-  <%= link_to "Forgot your password?", new_password_path(resource_name) %><br />
+  <div class="rowRemember">
+      <div class="forgetmenot input_styled checklist">
+          <div class="rowCheckbox"><input type="checkbox" name="remember" id="remember" value="3" checked><label for="remember">Remember&nbsp;me?</label></div>
+      </div>
+      <span class="forget_password"><%= link_to "Forgot your password?", new_password_path(resource_name) %></span>
+      <input type="hidden" name="redirect_to" value="">
+      <input type="hidden" name="testcookie" value="1">
+  </div>
 <% end %>
 
 <%- if devise_mapping.confirmable? && controller_name != 'confirmations' %>
