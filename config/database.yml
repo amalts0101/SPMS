@@ -13,8 +13,8 @@ development:
   <<: *default
   database: spms_dev
   host: localhost
-  username: postgres 
-  password: postgres
+  username: joicy
+  password: joicy
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
