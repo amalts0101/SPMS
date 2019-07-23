@@ -1,2 +1,135 @@
-<h1>Projects#index</h1>
-<p>Find me in app/views/projects/index.html.erb</p>
+<!doctype html>
+<!--[if lt IE 7 ]><html lang="en" class="no-js ie6"> <![endif]-->
+<!--[if IE 7 ]><html lang="en" class="no-js ie7"> <![endif]-->
+<!--[if IE 8 ]><html lang="en" class="no-js ie8"> <![endif]-->
+<!--[if IE 9 ]><html lang="en" class="no-js ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--><html lang="en" class="no-js"> <!--<![endif]--> 
+<head>
+<meta charset="utf-8">
+<meta name="author" content="ThemeFuse">
+<meta name="keywords" content="">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Metro Vibes | Blog</title>
+
+<!-- main JS libs  -->
+<script src="js/libs/modernizr.min.js"></script>
+<script src="js/libs/jquery-1.10.0.js"></script>
+<script src="js/libs/jquery-ui.min.js"></script>
+<script src="js/libs/bootstrap.min.js"></script>
+
+<!-- Style CSS-->
+<link href="css/bootstrap.css" media="screen" rel="stylesheet">
+<link href="style.css" media="screen" rel="stylesheet">
+
+<!-- scripts  -->
+<script src="js/general.js"></script>
+<!-- custom input -->
+<script src="js/jquery.customInput.js"></script>
+<script type="text/javascript" src="js/custom.js"></script>
+<!-- Placeholders -->
+<script type="text/javascript" src="js/jquery.powerful-placeholder.min.js"></script>
+<!-- Calendar -->
+<link href="css/jquery-ui-1.8.20.custom.css" rel="stylesheet">
+<script src="js/jquery-ui.multidatespicker.js"></script>
+<!-- Video Player  -->
+<link href="css/video-js.css" rel="stylesheet">
+<script src="js/video.js"></script>
+<!-- Audio Player  -->
+<link href="css/jplayer.css" rel="stylesheet">
+<script src="js/jquery.jplayer.min.js"></script>
+<script src="js/jplayer.playlist.min.js"></script>
+
+<!--[if lt IE 9]><script src="js/respond.min.js"></script><![endif]-->
+<!--[if gte IE 9]>
+<style type="text/css">
+    .gradient {filter: none !important;}
+</style>
+<![endif]-->
+</head>
+
+<body>
+	<div class="container container-wide">
+         <!-- content -->
+        <div class="content " role="main">
+            <!-- row -->
+            <div class="row">
+                <div class="col-sm-8">
+                    <!-- Website Menu -->
+                    <div id="topmenu">
+                        <ul class="dropdown clearfix boxed">
+                            <li class="menu-level-0"><a href="projects.html"><i class="icon-menu"></i><span>projects</span><sup class="note">3</sup></a></li>
+                            <li class="menu-level-0"><a href="activities.html"><i class="icon-menu icon-menu2"></i><span>activities</span></a> </li>
+                            <li class="menu-level-0"><a href="#"><i class="icon-menu icon-menu3"></i><span>sheets</span></a>
+                                <ul class="submenu-1">
+                                    <li class="menu-level-1"><a href="#">Web design</a></li>
+                                    <li class="menu-level-1"><a href="#">User interface</a></li>
+                                    <li class="menu-level-1"><a href="#">Social media</a>
+                                        <ul class="submenu-2">
+                                            <li class="menu-level-2"><a href="#">Gallery images</a></li>
+                                            <li class="menu-level-2"><a href="#">Fine Slider</a></li>
+                                            <li class="menu-level-2"><a href="#">Video in header</a></li>
+                                            <li class="menu-level-2"><a href="#">Video Slider</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="menu-level-0"><a href="#"><i class="icon-menu icon-menu4"></i><span>settings</span></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div id="topmenu">
+                        <ul class="dropdown clearfix boxed">
+                            <li class="menu-level-0"><a href="home.html"><i class="icon-menu icon-menu3"></i><span>John Doe</span><sup class="note">3</sup></a></li>
+                            <li class="menu-level-0"><a href="<%= destroy_user_session_path %>" data-method="delete"><span>Logout</span></a> </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- row-->
+			<div class="row">
+				<div class="col-sm-8">
+					<!-- content-->
+					<div class="content " role="main">
+						<!-- post list -->
+						<div class="postlist">
+	            <div class="post-item boxed style5 clearfix">
+	            	<% @projects.each do |project| %>
+	            	<div class="col-sm-2">
+		              <div class="comment-avatar logo-height">
+										<div class="avatar"><img src="/assets/bizdart-logo1.png" alt=""></div>
+									</div>
+								</div>
+								<div class="col-sm-9">
+		              <div class="inner">
+		                <div class="post-title"><h2><%= project.name %></a></h2></div>
+		                <div class="post-meta-top">
+		                  <span class="post-author"><%= project.status %></span>
+		                  <span> | </span>
+		                  <span class="post-date">Since 5 May 2013</span>
+		                </div>
+		                <div class="post-desc">
+		                  <p>Some comments</p>
+		                </div>
+		                <div class="post-meta-bot post-meta-links">
+		                  <a href='/activities/index'class="btn btn-small btn-pink"><span><%= project.total_hours %> Hours</span></a>
+		                  <a href="#" class="btn btn-small btn-blue"><span>4 Sheets</span></a>
+		                </div>
+		              </div>
+
+		            </div>
+		                <%end%>
+	            </div>
+	         
+	            <!--/post item-->
+						</div>
+						<!--/ postlist-->
+					</div>
+					<!--/ content-->
+			  </div>
+			</div>
+        </div>
+    </div>
+</body>
+</html>
