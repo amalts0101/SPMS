@@ -6,17 +6,12 @@
         
     </div>
     <div class="inner">
-        <% @activities.each do |activity|%>
-            
-               <li> <a href="/activities/index"><i class="ico-cat ico-cat3"></i><span><%=activity.name%> </span>
-                
-               <span> Hours-<%=activity.hours%></span></a>
-               
-            </li>
-              </ul>
-      
-         
-        <%end%>
+       <% @activities.each do |activity|%>
+         <li> <%= link_to activities_path do %><i class="ico-cat ico-cat3"></i><span><%=activity.name%></span>
+            <span> Hours-<%=activity.hours%></span>
+             <% end %>
+        </li>
+       <%end%>
     </div>
 </div>
 <!--/ Recent Activity -->
