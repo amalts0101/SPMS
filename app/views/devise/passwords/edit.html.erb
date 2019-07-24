@@ -1,6 +1,5 @@
 <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
   <%= f.hidden_field :reset_password_token %>
-<body>
     <!-- Widget caption -->
     <div class="widget-full-width widget-caption boxed no-radius">
         <!-- container-->
@@ -47,17 +46,17 @@
                                     <h6>Change your password</h6>
                                    <div class="field_text">
                                         <label for="user_pass" class="label_title">New Password <em>(<%= @minimum_password_length %> characters minimum)</em></label>
-                                            <%= f.password_field :password, autocomplete: "current-password" %>
+                                            <%= f.password_field :password, autocomplete: "current-password", id: "password" %>
                                         <span class="input_icon input_pass"></span>
                                     </div>
                                     <div class="field_text">
                                         <label for="user_pass_confirm" class="label_title">Confirm Password</label>
-                                            <%= f.password_field :password_confirmation, autocomplete: "current-password" %>
+                                            <%= f.password_field :password_confirmation, autocomplete: "current-password", id: "confirmpass" %>
                                         <span class="input_icon input_pass"></span>
                                     </div>
                                 </div>
                                 <div class="rowSubmit">
-                                <a href="javascript:$('form').submit()" class="btn btn-icon"><span id="login-submit"><i></i>Change my Password</span></a>
+                                <a href="javascript:$('form').submit()" class="btn btn-icon" id="resetpass"><span id="login-submit"><i></i>Change my Password</span></a>
                                 <%= render "devise/shared/links" %>
                                 </div>
                             </form>
@@ -93,5 +92,16 @@
         <!--/ container-->
     </div>
     <!--/ Widget Partners -->
-        </body>
+    <!-- Click link on enter key -->
+<script type="text/javascript">  
+  
+$('#password, #confirmpass').keypress(function(e) {
+     //check if enter is pressed
+   if(e.keyCode == 13) {
+    //click your link
+    javascript:$('form').submit()
+      }
+  });
+
+</script>
 <%end%>
