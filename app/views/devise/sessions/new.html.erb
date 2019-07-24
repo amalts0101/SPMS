@@ -1,5 +1,4 @@
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-<body>
     <!-- Widget caption -->
     <div class="widget-full-width widget-caption boxed no-radius">
         <!-- container-->
@@ -18,59 +17,59 @@
     </div>
     <!--/ Widget caption -->
 
-<div class="container container-wide">
+    <div class="container container-wide">
 
-    <!-- content -->
-    <div class="content " role="main">
-        <!-- row -->
-        <div class="row">
-            <div class="col-sm-12">
+        <!-- content -->
+        <div class="content " role="main">
+            <!-- row -->
+            <div class="row">
+                <div class="col-sm-12">
 
-                <!-- row level 2 -->
-                <div class="row">
-                    <div class="col-sm-3"></div>
-                    <div class="col-sm-6">
+                    <!-- row level 2 -->
+                    <div class="row">
+                        <div class="col-sm-3"></div>
+                        <div class="col-sm-6">
 
-                        <!-- login widget -->
-                        <div class="widget-container widget_login styled boxed">
-                            <form action="#" method="post" id="loginform" class="loginform">
-                                <div class="inner">
-                                        <%- flash.each do |name, msg| -%>
-                                          <%= content_tag :div, msg, :id => "flash_#{name}" if msg.is_a?(String) %>
-                                        <%- end -%>  
-                                    <h6>Login to your account</h6>
-                                    <div class="field_text">
-                                        <label for="user_login" class="label_title">Email</label>
-                                            <%= f.text_field :email, autofocus: true, autocomplete: "email" , id: "email"%>
-                                        <span class="input_icon input_email"></span>
+                            <!-- login widget -->
+                            <div class="widget-container widget_login styled boxed">
+                                <form action="#" method="post" id="loginform" class="loginform">
+                                    <div class="inner">
+                                            <%- flash.each do |name, msg| -%>
+                                              <%= content_tag :div, msg, :id => "flash_#{name}" if msg.is_a?(String) %>
+                                            <%- end -%>  
+                                        <h6>Login to your account</h6>
+                                        <div class="field_text">
+                                            <label for="user_login" class="label_title">Email</label>
+                                                <%= f.text_field :email, autofocus: true, autocomplete: "email" , id: "email"%>
+                                            <span class="input_icon input_email"></span>
+                                        </div>
+                                        <div class="field_text">
+                                            <label for="user_pass" class="label_title">Password</label>
+                                                <%= f.password_field :password, autocomplete: "current-password", id: "password"%>
+                                            <span class="input_icon input_pass"></span>
+                                        </div>
                                     </div>
-                                    <div class="field_text">
-                                        <label for="user_pass" class="label_title">Password</label>
-                                            <%= f.password_field :password, autocomplete: "current-password", id: "password"%>
-                                        <span class="input_icon input_pass"></span>
+                                    <div class="rowSubmit">
+                                        <a href="javascript:$('form').submit()" class="btn btn-icon" id = "sign-in"><span id="login-submit"><i></i>Sign In</span></a>
+                                        <%= render "devise/shared/links" %>
                                     </div>
-                                </div>
-                                <div class="rowSubmit">
-                                    <a href="javascript:$('form').submit()" class="btn btn-icon" id = "sign-in"><span id="login-submit"><i></i>Sign In</span></a>
-                                    <%= render "devise/shared/links" %>
-                                </div>
-                            </form>
+                                </form>
+                            </div>
+                            <!--/ login widget -->
+
+                            
                         </div>
-                        <!--/ login widget -->
-
-                        
                     </div>
+                    <!--/ row level 2 -->
                 </div>
-                <!--/ row level 2 -->
             </div>
+
         </div>
-
+        <!--/ content -->
     </div>
-    <!--/ content -->
-</div>
-<!--/ container -->
+    <!--/ container -->
 
-<!-- Widget Partners -->
+    <!-- Widget Partners -->
     <div class="widget-full-width widget-partners boxed no-radius">
         <!-- container-->
         <div class="container">
@@ -86,20 +85,14 @@
         </div>
         <!--/ container-->
     </div>
-    <!--/ Widget Partners -->
-
-<!-- Click link on enter key -->
-<script type="text/javascript">  
-  
-$('#password, #email').keypress(function(e) {
-     //check if enter is pressed
-   if(e.keyCode == 13) {
-    //click your link
-      document.getElementById('sign-in').click();
-      }
+<script type="text/javascript">
+    $('#password, #email').keypress(function(e) {
+  //check if enter is pressed
+    if(e.keyCode == 13) {
+  //click your link
+      javascript:$('form').submit()
+    }
   });
-
 </script>
-</body>
-
+    <!--/ Widget Partners -->
 <% end %>
