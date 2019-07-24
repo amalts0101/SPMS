@@ -6,11 +6,9 @@
                 <div class="field_select">
                     <label class="label_title"><i class="icon-menu icon-menu6"></i>ADD ACTIVTIY</label>
                 </div>
-                <div class="field_text">
-                    <%= form.select(:project_id, Project.pluck(:name, :id)) %>
-                </div>
-            
-                
+                <div class = "field_text">
+                    <%= form.select(:project_id, Project.pluck(:name, :id), {}, {multiple: true, size: 1}) %>
+                </div>    
                 <div class="field_text input_date adv_block">
                    <input type="text" name="filter_date_in" class="inputField inputDate" value="Select Date" onfocus="if (this.value == 'Check in') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Check in';}" id="filter_date_in">
                    <span class="input_icon"></span>
@@ -44,5 +42,6 @@
            minDate: 0,
            showOtherMonths: true
        });
+       jQuery('#activity_project_id').chosen({ width: "100%", max_selected_options: 1 });
    });
 </script>

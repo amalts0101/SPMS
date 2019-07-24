@@ -39,59 +39,10 @@
             </div>
         </div>
 
-        <div class="row">
-            <div class="col-sm-12">
-                <div class="widget-container widget_search boxed line-left">
-                    <div class="inner">
-                        <form method="get" id="searchform" action="#">
-                            <div class="row">
-                                <div class="col-sm-3">
-                                    <div class="clearfix">
-                                        <div>
-                                            <label for="search" class="label_title">Project</label>
-                                            <input name="search" id="search" value="" type="text" class="inputtext" />
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-sm-2">
-                                    <div class="clearfix">
-                                        <div>
-                                            <label for="search" class="label_title">Date</label>
-                                            <input name="search" id="search" value="" type="text" />
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-sm-1">
-                                    <div class="clearfix">
-                                        <div>
-                                            <label for="search" class="label_title">Hours</label>
-                                            <input name="search" id="search" value="" type="text" class="inputtext" />
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-sm-4">
-                                    <div class="clearfix">
-                                        <div>
-                                            <label for="search" class="label_title">Activity</label>
-                                            <input name="search" id="search" value="" type="text" />
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-sm-1"></div>
-                                <div class="col-sm-1">
-                                    <div class="clearfix">
-                                        <span class="btn"><input type="submit" value="Add Activity" /></span>
-                                    </div>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
 
-        
-        <div class="row">
+
+<%= render 'add_activity_list' %>
+            <div class="row">
             <div class="col-sm-2">
                 <!-- Join Box -->
                 
@@ -101,22 +52,16 @@
                 <!--/ Join Box -->
             </div>
 
-            <div class="col-sm-10">
-        
-
-                <!-- row--> 
-                <div class="row">
+           <!-- <div class="col-sm-10">-->
                     <div class="col-sm-6">
                         <!-- toggle content -->
                         <div class="toggle boxed">
                             <div class="toggle-header">
-                                <a class="toggle-link collapsed" data-toggle="collapse" href='#toggle4'>
-                                    <span class="question">OMS</span>
+                                <a class="toggle-link collapsed" data-toggle="collapse" href='#toggle4'>                                    <span class="question">OMS</span>
                                     <h5>Daily Meetings - (6 hrs)</h5>
                                     <i></i>
                                 </a>
-                            </div>
-                            <div id="toggle4" class="toggle-body collapse">
+                           </div>                            <div id="toggle4" class="toggle-body collapse">
                                 <div class="inner">
                                     <p>Vivamus hendrerit arcu sed erat molestie vehicula. Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor. Ut in nulla enim. Phasellus molestie magna non est bibendum non venenatis nisl tempor. Suspendisse dictum feugiat nisl ut dapibus.</p>
                                 </div>
@@ -130,5 +75,15 @@
             </div>
         </div>
     </div>
-
+ 
 </div>
+<script>
+   jQuery(document).ready(function($) {
+       $("#filter_date_in").datepicker({
+           dateFormat: 'MM dd, yy',
+           minDate: 0,
+           showOtherMonths: true
+       });
+       jQuery('#activity_project_id').chosen({ width: "100%", max_selected_options: 1 });
+   });
+</script>
