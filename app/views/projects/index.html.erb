@@ -1,54 +1,4 @@
-<!doctype html>
-<!--[if lt IE 7 ]><html lang="en" class="no-js ie6"> <![endif]-->
-<!--[if IE 7 ]><html lang="en" class="no-js ie7"> <![endif]-->
-<!--[if IE 8 ]><html lang="en" class="no-js ie8"> <![endif]-->
-<!--[if IE 9 ]><html lang="en" class="no-js ie9"> <![endif]-->
-<!--[if (gt IE 9)|!(IE)]><!--><html lang="en" class="no-js"> <!--<![endif]--> 
-<head>
-<meta charset="utf-8">
-<meta name="author" content="ThemeFuse">
-<meta name="keywords" content="">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Metro Vibes | Blog</title>
-
-<!-- main JS libs  -->
-<script src="js/libs/modernizr.min.js"></script>
-<script src="js/libs/jquery-1.10.0.js"></script>
-<script src="js/libs/jquery-ui.min.js"></script>
-<script src="js/libs/bootstrap.min.js"></script>
-
-<!-- Style CSS-->
-<link href="css/bootstrap.css" media="screen" rel="stylesheet">
-<link href="style.css" media="screen" rel="stylesheet">
-
-<!-- scripts  -->
-<script src="js/general.js"></script>
-<!-- custom input -->
-<script src="js/jquery.customInput.js"></script>
-<script type="text/javascript" src="js/custom.js"></script>
-<!-- Placeholders -->
-<script type="text/javascript" src="js/jquery.powerful-placeholder.min.js"></script>
-<!-- Calendar -->
-<link href="css/jquery-ui-1.8.20.custom.css" rel="stylesheet">
-<script src="js/jquery-ui.multidatespicker.js"></script>
-<!-- Video Player  -->
-<link href="css/video-js.css" rel="stylesheet">
-<script src="js/video.js"></script>
-<!-- Audio Player  -->
-<link href="css/jplayer.css" rel="stylesheet">
-<script src="js/jquery.jplayer.min.js"></script>
-<script src="js/jplayer.playlist.min.js"></script>
-
-<!--[if lt IE 9]><script src="js/respond.min.js"></script><![endif]-->
-<!--[if gte IE 9]>
-<style type="text/css">
-    .gradient {filter: none !important;}
-</style>
-<![endif]-->
-</head>
-
-<body>
-	<div class="container container-wide">
+ <div class="container container-wide">
          <!-- content -->
         <div class="content " role="main">
             <!-- row -->
@@ -113,13 +63,12 @@
 		                  <p>Some comments</p>
 		                </div>
 		                <div class="post-meta-bot post-meta-links">
-		                  <a href='/activities/index'class="btn btn-small btn-pink"><span><%= project.total_hours %> Hours</span></a>
+		                  <a href='/activities/index'class="btn btn-small btn-pink"><span><%= sprintf('%g', project.total_hours) %> Hours</span></a>
 		                  <a href="#" class="btn btn-small btn-blue"><span>4 Sheets</span></a>
 		                </div>
 		              </div>
-
 		            </div>
-		                <%end%>
+		           <%end%>
 	            </div>
 	         
 	            <!--/post item-->
@@ -131,5 +80,3 @@
 			</div>
         </div>
     </div>
-</body>
-</html>
