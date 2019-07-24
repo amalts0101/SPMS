@@ -1,0 +1,48 @@
+<!-- Contact form -->
+<div class="add-comment styled boxed" id="addcomments">
+    <div class="comment-form">
+        <%= form_for Activity.new do |form| %>
+            <div class="form-inner">
+                <div class="field_select">
+                    <label class="label_title"><i class="icon-menu icon-menu6"></i>ADD ACTIVTIY</label>
+                </div>
+                <div class="field_text">
+                    <%= form.select(:project_id, Project.pluck(:name, :id)) %>
+                </div>
+            
+                
+                <div class="field_text input_date adv_block">
+                   <input type="text" name="filter_date_in" class="inputField inputDate" value="Select Date" onfocus="if (this.value == 'Check in') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Check in';}" id="filter_date_in">
+                   <span class="input_icon"></span>
+               </div>
+                <div class="field_text"> 
+                    <%= form.text_field :hours, placeholder: 'Add hours'%>
+                </div>
+                
+                <div class="clear"></div>
+                <div class="field_text field_textarea">
+                    <%= form.text_field :name, placeholder: 'Add Activity'%>
+                </div>
+                <div class="clear"></div>
+            </div>
+
+            <div class="rowSubmit clearfix">
+                <div class="input_styled checklist">
+                    <div class="rowCheckbox checkbox-filled"><input name="save" type="checkbox" checked id="save" value="save"><label for="save" class="checked">Secondary</label></div>
+                </div>
+                <span class="btn"><input type="submit" value="Save" /></span>
+            </div>
+            
+        <%end%>
+    </div>
+</div>
+<!--/ Contact form -->
+<script>
+   jQuery(document).ready(function($) {
+       $("#filter_date_in").datepicker({
+           dateFormat: 'MM dd, yy',
+           minDate: 0,
+           showOtherMonths: true
+       });
+   });
+</script>

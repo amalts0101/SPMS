@@ -1,5 +1,6 @@
 class ProjectsController < ApplicationController
   before_action :authenticate_user!
   def index
-  end
+  @projects = Project.all
+end
 end

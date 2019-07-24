@@ -2,6 +2,7 @@
 <html>
   <head>
     <title>SPMS | Secondary Project Management System</title>
+    <link rel="shortcut icon" href="/assets/logo.ico" type="image/x-icon" />
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -103,6 +104,11 @@
   </head>
 
   <body>
-    <%= yield %>
+    <div class="container container-wide">
+      <!-- content -->
+      <div class="content" role="main">
+        <%= yield %>
+      </div>
+    </div>
   </body>
 </html>
