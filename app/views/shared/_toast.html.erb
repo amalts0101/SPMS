@@ -1,0 +1,10 @@
+<% flash.each do |key, value| %>
+  <script type="text/javascript">
+    $.toast({
+      heading: '<%= toast_title(key)%>',
+      text: '<%= value %>',
+      showHideTransition: 'plain',
+      icon: '<%= toast_icon(key) %>'
+    })
+  </script>
+<% end %>
