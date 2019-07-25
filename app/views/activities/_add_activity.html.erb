@@ -1,0 +1,57 @@
+<div class="row">
+  <div class="col-sm-12">
+    <div class="widget-container widget_search boxed line-left">
+      <div class="inner">
+        <%= form_for Activity.new do |form| %>
+          <div class="row">
+            <div class="col-sm-3">
+              <div class="clearfix">
+                <div class="field_text" >
+                  <%= form.select(:project_id, Project.pluck(:name, :id), {}, {multiple: true, size: 1}) %>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-2">
+              <div class="clearfix">
+                <div>
+                  <input type="text" name="activity[date]" class="inputField inputDate" value="Select Date" onfocus="if (this.value == 'Check in') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Check in';}" id="filter_date_in">
+                  <span class="input_icon"></span>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-1">
+              <div class="clearfix">
+                <div>
+                  <%= form.text_field :hours, placeholder: 'Hours'%>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-4">
+              <div class="clearfix">
+                <div>
+                  <%= form.text_field :name, placeholder: 'Activity name' %>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-1"></div>
+            <div class="col-sm-1">
+              <div class="clearfix">
+                <span class="btn"><input type="submit" value="Add Activity"/></span>
+              </div>
+            </div>
+          </div>
+        <%end-%>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  jQuery(document).ready(function($) {
+    $("#filter_date_in").datepicker({
+      dateFormat: 'MM dd, yy',
+      minDate: 0,
+      showOtherMonths: true
+    });
+    jQuery('#activity_project_id').chosen({ width: "100%", max_selected_options: 1 });
+  });
+</script>
