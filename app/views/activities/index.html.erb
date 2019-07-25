@@ -5,85 +5,49 @@
         <div class="row">
             <div class="col-sm-8">
                 <!-- Website Menu -->
-                <div id="topmenu">
-                    <ul class="dropdown clearfix boxed">
-                        <li class="menu-level-0"><a href="projects.html"><i class="icon-menu"></i><span>projects</span><sup class="note">3</sup></a></li>
-                        <li class="menu-level-0"><a href="activities/index"><i class="icon-menu icon-menu2"></i><span>activities</span></a> </li>
-                        <li class="menu-level-0"><a href="#"><i class="icon-menu icon-menu3"></i><span>sheets</span></a>
-                            <ul class="submenu-1">
-                                <li class="menu-level-1"><a href="#">Web design</a></li>
-                                <li class="menu-level-1"><a href="#">User interface</a></li>
-                                <li class="menu-level-1"><a href="#">Social media</a>
-                                    <ul class="submenu-2">
-                                        <li class="menu-level-2"><a href="#">Gallery images</a></li>
-                                        <li class="menu-level-2"><a href="#">Fine Slider</a></li>
-                                        <li class="menu-level-2"><a href="#">Video in header</a></li>
-                                        <li class="menu-level-2"><a href="#">Video Slider</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="menu-level-0"><a href="#"><i class="icon-menu icon-menu4"></i><span>settings</span></a></li>
-                    </ul>
-                </div>
+                <%= render partial: 'shared/navbar' %>
             </div>
             <div class="col-sm-4">
                 <div id="topmenu">
                     <ul class="dropdown clearfix boxed">
-
                         <li class="menu-level-0"><a href="home.html"><i class="icon-menu icon-menu3"></i><span><%= current_user.name %></span><sup class="note">3</sup></a></li>
                         <li class="menu-level-0"><a href="<%= destroy_user_session_path%>" data-method = "delete"><span>Logout</span></a> </li>
-
                     </ul>
                 </div>
             </div>
         </div>
-
-
-
-<%= render 'add_activity_list' %>
+        
+        <%= render 'add_activity_list' %>
             <div class="row">
-            <div class="col-sm-2">
+                <div class="col-sm-2">
                 <!-- Join Box -->
-                
                 <div class="widget-container widget-join boxed">
                     <h3 class="widget-title"><a href="#">12 July</a></h3>
                 </div>
                 <!--/ Join Box -->
             </div>
-
            <!-- <div class="col-sm-10">-->
-                    <div class="col-sm-6">
-                        <!-- toggle content -->
-                        <div class="toggle boxed">
-                            <div class="toggle-header">
-                                <a class="toggle-link collapsed" data-toggle="collapse" href='#toggle4'>                                    <span class="question">OMS</span>
-                                    <h5>Daily Meetings - (6 hrs)</h5>
-                                    <i></i>
-                                </a>
-                           </div>                            <div id="toggle4" class="toggle-body collapse">
-                                <div class="inner">
-                                    <p>Vivamus hendrerit arcu sed erat molestie vehicula. Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor. Ut in nulla enim. Phasellus molestie magna non est bibendum non venenatis nisl tempor. Suspendisse dictum feugiat nisl ut dapibus.</p>
-                                </div>
+                <div class="col-sm-6">
+                    <!-- toggle content -->
+                    <div class="toggle boxed">
+                        <div class="toggle-header">
+                            <a class="toggle-link collapsed" data-toggle="collapse" href='#toggle4'>
+                                <span class="question">OMS</span>
+                                <h5>Daily Meetings - (6 hrs)</h5>
+                                <i></i>
+                            </a>
+                        </div>
+                        <div id="toggle4" class="toggle-body collapse">
+                            <div class="inner">
+                                <p>Vivamus hendrerit arcu sed erat molestie vehicula. Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor. Ut in nulla enim. Phasellus molestie magna non est bibendum non venenatis nisl tempor. Suspendisse dictum feugiat nisl ut dapibus.</p>
                             </div>
                         </div>
-                        <!--/ toggle content -->
                     </div>
-
+                        <!--/ toggle content -->
                 </div>
-                <!--/ row-->
             </div>
+                <!--/ row-->
         </div>
     </div>
- 
 </div>
-<script>
-   jQuery(document).ready(function($) {
-       $("#filter_date_in").datepicker({
-           dateFormat: 'MM dd, yy',
-           minDate: 0,
-           showOtherMonths: true
-       });
-       jQuery('#activity_project_id').chosen({ width: "100%", max_selected_options: 1 });
-   });
-</script>
+

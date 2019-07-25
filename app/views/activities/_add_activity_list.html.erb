@@ -14,7 +14,8 @@
                                 <div class="col-sm-2">
                                     <div class="clearfix">
                                         <div>
-                                            <input type="text" name="filter_date_in" class="inputField inputDate" value="Select Date" onfocus="if (this.value == 'Check in') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Check in';}" id="filter_date_in">
+
+                                            <input type="text" name="activity[date]" class="inputField inputDate" value="Select Date" onfocus="if (this.value == 'Check in') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Check in';}" id="filter_date_in">
                                            <span class="input_icon"></span>
                                         </div>
                                     </div>
@@ -46,4 +47,13 @@
             </div>
        </div>
     </div>
-
+<script>
+   jQuery(document).ready(function($) {
+       $("#filter_date_in").datepicker({
+           dateFormat: 'MM dd, yy',
+           minDate: 0,
+           showOtherMonths: true
+       });
+       jQuery('#activity_project_id').chosen({ width: "100%", max_selected_options: 1 });
+   });
+</script>
