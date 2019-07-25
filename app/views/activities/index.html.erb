@@ -1,53 +1,35 @@
 <div class="container container-wide">
-         <!-- content -->
-    <div class="content " role="main">
-        <!-- row -->
-        <div class="row">
-            <div class="col-sm-8">
-                <!-- Website Menu -->
-                <%= render partial: 'shared/navbar' %>
-            </div>
-            <div class="col-sm-4">
-                <div id="topmenu">
-                    <ul class="dropdown clearfix boxed">
-                        <li class="menu-level-0"><a href="home.html"><i class="icon-menu icon-menu3"></i><span><%= current_user.name %></span><sup class="note">3</sup></a></li>
-                        <li class="menu-level-0"><a href="<%= destroy_user_session_path%>" data-method = "delete"><span>Logout</span></a> </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        
-        <%= render 'add_activity_list' %>
-            <div class="row">
-                <div class="col-sm-2">
-                <!-- Join Box -->
-                <div class="widget-container widget-join boxed">
-                    <h3 class="widget-title"><a href="#">12 July</a></h3>
-                </div>
-                <!--/ Join Box -->
-            </div>
-           <!-- <div class="col-sm-10">-->
-                <div class="col-sm-6">
-                    <!-- toggle content -->
-                    <div class="toggle boxed">
-                        <div class="toggle-header">
-                            <a class="toggle-link collapsed" data-toggle="collapse" href='#toggle4'>
-                                <span class="question">OMS</span>
-                                <h5>Daily Meetings - (6 hrs)</h5>
-                                <i></i>
-                            </a>
-                        </div>
-                        <div id="toggle4" class="toggle-body collapse">
-                            <div class="inner">
-                                <p>Vivamus hendrerit arcu sed erat molestie vehicula. Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor. Ut in nulla enim. Phasellus molestie magna non est bibendum non venenatis nisl tempor. Suspendisse dictum feugiat nisl ut dapibus.</p>
-                            </div>
-                        </div>
-                    </div>
-                        <!--/ toggle content -->
-                </div>
-            </div>
-                <!--/ row-->
-        </div>
-    </div>
-</div>
+  <div class="content" role="main">
+    
+    <%= render partial: 'shared/navbar' %>
+    <%= render partial: 'add_activity' %>
 
+    <div class="row">
+      <div class="col-sm-2">
+        <!-- Date -->
+        <div class="widget-container widget-join boxed">
+          <h3 class="widget-title"><a href="#">12 July</a></h3>
+        </div>
+        <!--/ Date -->
+      </div>
+      <div class="col-sm-6">
+        <!-- Activity -->
+        <div class="toggle boxed">
+          <div class="toggle-header">
+            <a class="toggle-link collapsed" data-toggle="collapse" href='#toggle4'>
+              <span class="question">OMS</span>
+              <h5>Daily Meetings - (6 hrs)</h5>
+              <i></i>
+            </a>
+          </div>
+          <div id="toggle4" class="toggle-body collapse">
+            <div class="inner">
+              <p>Description</p>
+            </div>
+          </div>
+        </div>
+          <!--/ Activity -->
+      </div>
+    </div>
+  </div>
+</div>
