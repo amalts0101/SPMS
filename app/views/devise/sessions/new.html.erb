@@ -34,9 +34,6 @@
                             <div class="widget-container widget_login styled boxed">
                                 <form action="#" method="post" id="loginform" class="loginform">
                                     <div class="inner">
-                                            <%- flash.each do |name, msg| -%>
-                                              <%= content_tag :div, msg, :id => "flash_#{name}" if msg.is_a?(String) %>
-                                            <%- end -%>  
                                         <h6>Login to your account</h6>
                                         <div class="field_text">
                                             <label for="user_login" class="label_title">Email</label>

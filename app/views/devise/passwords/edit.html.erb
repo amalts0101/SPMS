@@ -34,15 +34,7 @@
                         <!-- login widget -->
                         <div class="widget-container widget_login styled boxed">
                             <form action="#" method="post" id="loginform" class="loginform">
-                                <div class="inner">
-                                    <%= render "devise/shared/error_messages", resource: resource %>
-                                     <% if flash.alert %>
-                                       <div id=”error_explanation”>
-                                        <ul>
-                                         <li><%= flash.alert %></li>
-                                        </ul>
-                                       </div>
-                                      <% end %> 
+                                <div class="inner"> 
                                     <h6>Change your password</h6>
                                    <div class="field_text">
                                         <label for="user_pass" class="label_title">New Password <em>(<%= @minimum_password_length %> characters minimum)</em></label>

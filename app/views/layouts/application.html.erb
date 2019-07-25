@@ -14,90 +14,12 @@
     <meta name="keywords" content="">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>SPMS | Dashboard</title>
-
     <!-- Graph Builder -->
     <script type="text/javascript" src="https://www.google.com/jsapi"></script>
-    <script type="text/javascript">
-    google.load("visualization", "1", {packages:["corechart"]});
-    google.setOnLoadCallback(drawChart);
-    function drawChart() {
-        var data = google.visualization.arrayToDataTable([
-            ['Media', 'GB'],
-            ['Audio', 1100],
-            ['Video', 460],
-            ['Photo', 340],
-            ['Other', 100]
-        ]);
-
-        var options = {
-            pieHole: 0.4,
-            legend: 'none',
-            pieSliceText: 'none',
-            width: 220,
-            height: 220,
-            slices: {0: {color: '#4daf7b'}, 1: {color: '#e6623d'}, 2: {color: '#ebc85e'}, 3: {color: '#f4ede7'}},
-            chartArea:{left:"10px", top:"10px", width:"92%", height:"92%"}
-        };
-
-        var chart = new google.visualization.PieChart(document.getElementById('donutchart'));
-        chart.draw(data, options);
-
-        var data2 = google.visualization.arrayToDataTable([
-            ['Month', 'Traffic'],
-            ['June',  1100],
-            ['July',  1580],
-            ['August',  1300],
-            ['September',  1430]
-        ]);
-
-        var options2 = {
-            width: 220,
-            height: 220,
-            legend: 'none',
-            colors: ['#4daf7b'],
-            chartArea:{left:0, top:0, width:"100%", height:"100%"},
-            hAxis:{textPosition:"none", gridlines:{color:"#fff"}, baselineColor:"#4daf7b"},
-            vAxis:{textPosition:"none", gridlines:{color:"#fff"}, baselineColor:"#4daf7b"}
-        };
-
-        var chart2 = new google.visualization.ColumnChart(document.getElementById('columnchart'));
-        chart2.draw(data2, options2);
-    }
-  </script>
-  <script type="text/javascript">
-    jQuery(function()
-    {
-      jQuery('.scrollbar').jScrollPane({
-        verticalDragMaxHeight: 9,
-        verticalDragMinHeight:9
-      });
-
-      jQuery('.scrollbar.scrollbar-yellow').jScrollPane({
-        verticalDragMaxHeight: 20,
-        verticalDragMinHeight:20
-      });
-
-      jQuery('.scrollbar.scrollbar-red').jScrollPane({
-        verticalDragMaxHeight: 5,
-        verticalDragMinHeight:5
-      });
-
-      jQuery('.scrollbar.scrollbar-blue').jScrollPane({
-        verticalDragMaxHeight: 50,
-        verticalDragMinHeight:50
-      });
-    });
-  </script>
-
-  <!--[if lt IE 9]><script src="js/respond.min.js"></script><![endif]-->
-  <!--[if gte IE 9]>
-  <style type="text/css">
-      .gradient {filter: none !important;}
-  </style>
-  <![endif]-->
   </head>
 
   <body>
-  <%= yield %>
+    <%= render partial: 'shared/toast' %>
+    <%= yield %>
   </body>
 </html>
