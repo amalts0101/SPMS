@@ -2973,6 +2973,12 @@ input[type="password"]:focus{
 /*-----------------------------------*/
 
 /* Level 0 */
+.navbar-icon{
+    font-size: x-large;
+    vertical-align: middle;
+    margin-right: 10px;
+    margin-bottom: 3px;
+}
 
 .icon-menu{
     width: 30px;
@@ -3004,7 +3010,7 @@ input[type="password"]:focus{
 
 .dropdown a {
     display: block;
-    font-size: 17px;
+    font-size: 15px;
     line-height: 30px;
     font-weight: 700;
     text-transform: uppercase;
