@@ -7,9 +7,10 @@
     </div>
     <div class="inner">
        <% @activities.each do |activity|%>
-         <li> <%= link_to activities_path do %><i class="ico-cat ico-cat3"></i><span><%=activity.name%></span>
-            <span> Hours-<%=activity.hours%></span>
-             <% end %>
+         <li>
+           <a> <i class="ico-cat ico-cat3"></i>
+           <span><%=activity.name%></span>
+           <span> Hours-<%=activity.hours%></span></a> 
         </li>
        <%end%>
     </div>
