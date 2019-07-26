@@ -8,6 +8,7 @@ class User < ApplicationRecord
   has_many :user_projects
   has_many :projects, through: :user_projects
   has_many :activities
+  accepts_nested_attributes_for :projects, :allow_destroy => true
 
   def total_activity_hours
 	self.activities.sum(:hours).to_f
