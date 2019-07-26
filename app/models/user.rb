@@ -9,7 +9,7 @@ class User < ApplicationRecord
   has_many :projects, through: :user_projects
   has_many :activities
 
-  def total_activity_hours.
+  def total_activity_hours
 	self.activities.sum(:hours).to_f
   end
 end
