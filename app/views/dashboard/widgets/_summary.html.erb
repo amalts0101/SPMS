@@ -3,16 +3,18 @@
  <div class="service_item boxed green">
    <div class="inner">
      <div class="service_title"><h2>
-      <a href="#"><%=sprintf('%g',@user.total_activity_hours)%> Hours</a></h2>
+      <a href="#"><%=sprintf('%g',@user.total_month_hours)%> Hours This<br>
+      Month</a></h2>
      </div>
      <div class="service_desc">
        <div class="post-meta-top">
-        <span class="post-date"><i class="icon-post2 icon-date"></i>SEP 5TH, 2013</span>
-        <span class="post-date"><i class="icon-post2 icon-date"></i>SEP 5TH, 2013</span>
-        <span class="post-author"><i class="icon-post2 icon-author"></i>George S. Patton </span>
+        <span class="post-date "><i class="icon-post2 icon-date"></i>Total: 
+          <%=sprintf('%g',@user.total_activity_hours)%> Hours
+         </span>
+        <span class="post-author"><i class="icon-post2 icon-author"></i> Sheets</span>
        </div>
      </div>
     </div>
-   </div>
- </div>
+</div>
+</div>
 <!--/ Summary -->

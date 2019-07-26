@@ -2974,7 +2974,7 @@ input[type="password"]:focus{
 
 /* Level 0 */
 .navbar-icon{
-    font-size: x-large;
+    font-size: large;
     vertical-align: middle;
     margin-right: 10px;
     margin-bottom: 3px;
@@ -4006,3 +4006,7 @@ input[type="password"]:focus{
     margin-left: 25px;
 }
 .controls .checkbox-large.checkbox-noText .custom-checkbox label.checked {background-position: right -100px;}
+
+.project-logo{
+  width: 80px;
+}

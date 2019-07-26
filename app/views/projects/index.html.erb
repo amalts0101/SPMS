@@ -1,54 +1,28 @@
  <div class="container container-wide">
          <!-- content -->
         <div class="content " role="main">
-            <!-- row -->
-            <div class="row">
-                <div class="col-sm-8">
-                    <!-- Website Menu -->
-                    <div id="topmenu">
-                        <ul class="dropdown clearfix boxed">
-                            <li class="menu-level-0"><a href="projects.html"><i class="icon-menu"></i><span>projects</span><sup class="note">3</sup></a></li>
-                            <li class="menu-level-0"><a href="activities.html"><i class="icon-menu icon-menu2"></i><span>activities</span></a> </li>
-                            <li class="menu-level-0"><a href="#"><i class="icon-menu icon-menu3"></i><span>sheets</span></a>
-                                <ul class="submenu-1">
-                                    <li class="menu-level-1"><a href="#">Web design</a></li>
-                                    <li class="menu-level-1"><a href="#">User interface</a></li>
-                                    <li class="menu-level-1"><a href="#">Social media</a>
-                                        <ul class="submenu-2">
-                                            <li class="menu-level-2"><a href="#">Gallery images</a></li>
-                                            <li class="menu-level-2"><a href="#">Fine Slider</a></li>
-                                            <li class="menu-level-2"><a href="#">Video in header</a></li>
-                                            <li class="menu-level-2"><a href="#">Video Slider</a></li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="menu-level-0"><a href="#"><i class="icon-menu icon-menu4"></i><span>settings</span></a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-sm-4">
-                    <div id="topmenu">
-                        <ul class="dropdown clearfix boxed">
-                            <li class="menu-level-0"><a href="home.html"><i class="icon-menu icon-menu3"></i><span>John Doe</span><sup class="note">3</sup></a></li>
-                            <li class="menu-level-0"><a href="<%= destroy_user_session_path %>" data-method="delete"><span>Logout</span></a> </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
+          <%= render partial: 'shared/navbar' %>
             <!-- row-->
 			<div class="row">
 				<div class="col-sm-8">
 					<!-- content-->
 					<div class="content " role="main">
+             <%if @user.projects.blank?%>
+               <h1><font color="white">No Projects</h1>
+               <%flash[:info] = 'No Projects'%>
+               <%else%>
 						<!-- post list -->
 						<div class="postlist">
 	            <div class="post-item boxed style5 clearfix">
-	            	<% @projects.each do |project| %>
+                <div>
+                <%flash[:success] = 'Successfully loaded all projects' %>
+                <% @user_projects.each do |user_project| %>
+                <% project = user_project.project %>
 	            	<div class="col-sm-2">
 		              <div class="comment-avatar logo-height">
-										<div class="avatar"><img src="/assets/bizdart-logo1.png" alt=""></div>
+                  <div class="avatar">
+                      <%= image_tag project.logo.url || ('/assets/yourlogo.png'), class: 'project-logo' %>
+                   </div>
 									</div>
 								</div>
 								<div class="col-sm-9">
@@ -57,20 +31,21 @@
 		                <div class="post-meta-top">
 		                  <span class="post-author"><%= project.status %></span>
 		                  <span> | </span>
-		                  <span class="post-date">Since 5 May 2013</span>
+		                  <span class="post-date"><%=user_project.created_at.strftime("%d-%B-%Y")%></span>
 		                </div>
 		                <div class="post-desc">
 		                  <p>Some comments</p>
 		                </div>
 		                <div class="post-meta-bot post-meta-links">
-		                  <a href='/activities/index'class="btn btn-small btn-pink"><span><%= sprintf('%g', project.total_hours) %> Hours</span></a>
+		                  <a href='/activities/index'class="btn btn-small btn-pink">
+                      <span><%= sprintf('%g', project.total_hours) %> Hours</span></a>
 		                  <a href="#" class="btn btn-small btn-blue"><span>4 Sheets</span></a>
 		                </div>
 		              </div>
 		            </div>
+                <%end%>
 		           <%end%>
 	            </div>
-	         
 	            <!--/post item-->
 						</div>
 						<!--/ postlist-->
@@ -78,5 +53,5 @@
 					<!--/ content-->
 			  </div>
 			</div>
-        </div>
+     </div>
     </div>
