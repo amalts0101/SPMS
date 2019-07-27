@@ -1,0 +1,35 @@
+<!-- Activity -->
+<div class="col-sm-6">
+  <div class="toggle boxed">
+    <div class="toggle-header">
+      <a class="toggle-link collapsed" data-toggle="collapse" href='#toggle<%=activity.id%>'>
+        <span class="question"><%= activity.project_name %></span>
+        <h5><%= h truncate(activity.name, :length => 25) %></h5><h5 class="pull-right cards-hours"><%= activity.hours %> hrs</h5>
+        <i></i>
+      </a>
+    </div>
+    <div id="toggle<%=activity.id%>" class="toggle-body collapse">
+      <div class="inner">
+        <h5><%= activity.name %></h5><h4><%= activity.hours %> hrs</h4>
+        <div class="post-meta-bot post-meta-links">
+          <%= link_to edit_activity_path(activity),
+                remote: true,
+                class: 'btn btn-small btn-blue',
+                style: 'outline: none;',
+                hidefocus: 'true' do %>
+            <span class="gradient">Edit</span>
+          <% end %>
+          <%= link_to activity_path(activity), 
+                method: :delete, 
+                data: { confirm: 'Are you sure?' },
+                class: 'btn btn-small btn-pink',
+                style: 'outline: none;',
+                hidefocus: 'true' do %>
+            <span class="gradient">Delete</span>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+  <!--/ Activity -->

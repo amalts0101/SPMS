@@ -1295,8 +1295,8 @@ p{
 }
 .widget-join .widget-title a{
     display: block;
-    padding: 35px 39px 39px;
-    font-size: 32px;
+    padding: 22px 39px 22px;
+    font-size: 20px;
     font-weight: 700;
     color: #FFF;
     text-transform: none;
@@ -1313,6 +1313,15 @@ p{
     .widget-join .icon-join{margin-right: 20px;}
 }
 
+.activity-header{
+    text-align: center;
+    vertical-align: middle;
+    line-height: 70px;
+}
+
+.cards-hours{
+    margin-right: 15px;
+}
 /* Widget Twitter */
 
 .widget-twitter .inner{padding: 36px 36px 20px;}
@@ -1979,6 +1988,9 @@ label, input, button, select, textarea {
     font-size: 27px;
     padding: 28px 42px 32px;
     margin-bottom: 0;
+}
+.full-width{
+	width: 100% !important;
 }
 .field_text,
 .field_select{
