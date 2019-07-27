@@ -1,0 +1,52 @@
+<div class="comment-form">
+  <%= form_for @activity, remote: true do |form| %>
+    <div class="row">
+      <div class="col-sm-6">
+        <div class="field_text full-width">
+          <label for="user_login" class="label_title">Project</label>
+          <%= form.select(:project_id, projects.pluck(:name, :id), {selected: default_project.id}, {multiple: true, size: 1}) %>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="field_text full-width input_date adv_block">
+          <label for="user_login" class="label_title">Date</label>
+          <input type="text" name="activity[date]" class="inputField inputDate" value="<%= @activity.date&.strftime('%B %d, %Y') || Date.current.strftime('%B %d, %Y') %>" onfocus="if (this.value == 'Check in') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Check in';}" id="filter_date_in">
+          <span class="input_icon"></span>
+        </div>
+      </div>
+      <div class="col-sm-2">
+        <div class="field_text full-width"> 
+          <label for="user_login" class="label_title">Hours</label>
+          <%= form.text_field :hours, placeholder: 'Hours'%>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="clear"></div>
+          <div class="field_text full-width field_textarea">
+          <label for="user_login" class="label_title">Activity</label>
+            <%= form.text_area :name, placeholder: 'Activity'%>
+          </div>
+          <div class="clear"></div>
+        </div>
+      </div>
+    </div>
+    <div class="rowSubmit clearfix">
+      <span class="btn"><input type="submit" value="Save" form="<%= form.options[:html][:id] %>" id="submit-button" /></span>
+    </div>
+  <%end%>
+</div>
+<script>
+  jQuery(document).ready(function($) {
+    $("#filter_date_in").datepicker({
+        dateFormat: 'MM dd, yy',
+        showOtherMonths: true
+    });
+    jQuery('#activity_project_id').chosen({ width: "100%", max_selected_options: 1 });
+  });
+
+  $('#submit-button').click(function(){
+    $('#shared-modal').modal('hide');
+  })
+</script>

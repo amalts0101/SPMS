@@ -1,0 +1,30 @@
+<div class="row">
+  <div class="col-sm-12">
+    <!-- Date -->
+    <div class="widget-container widget-join boxed">
+      <h3 class="widget-title">
+        <div class="row">
+          <div class="col-sm-9">
+            <div class="activity-header">
+              <% if @activity_map.present? %>
+                You have <%= @activity_map.values.flatten.sum(&:hours).to_f %> Hours hours in <%= @activity_map.values.count %> entries (<%= @activity_map.keys.count %> Days)
+              <% else %>
+                You do not have any entries here
+              <% end %>
+            </div>
+          </div>
+          <div class="col-sm-3">
+            <%= link_to new_activity_path,
+                      remote: true,
+                      class: 'btn btn-small btn-blue',
+                      style: 'outline: none;',
+                      hidefocus: 'true' do %>
+                <span class="gradient">Add Activity</span>
+            <% end %>
+          </div>
+        </div>
+      </h3>
+    </div>
+    <!--/ Date -->
+  </div>
+</div>
