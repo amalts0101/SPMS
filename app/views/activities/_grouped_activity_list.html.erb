@@ -1,0 +1,17 @@
+<div id='activities-for-<%= date.to_i %>'>
+  <div class="row">
+    <div class="col-sm-2">
+      <!-- Date -->
+      <div class="widget-container widget-join boxed">
+        <h3 class="widget-title"><a href="#"><%= date.strftime("%b %d") %></a></h3>
+      </div>
+      <!--/ Date -->
+    </div>
+
+    <div class="col-sm-10" id="activity-cards-for-<%= date.to_i %>">
+      <% activities.each do |activity| %>
+        <%= render partial: 'activity_card', locals: {activity: activity} %>
+      <% end %>
+    </div>
+  </div>
+</div>

@@ -2,34 +2,13 @@
   <div class="content" role="main">
     
     <%= render partial: 'shared/navbar' %>
-    <%= render partial: 'add_activity' %>
 
-    <div class="row">
-      <div class="col-sm-2">
-        <!-- Date -->
-        <div class="widget-container widget-join boxed">
-          <h3 class="widget-title"><a href="#">12 July</a></h3>
-        </div>
-        <!--/ Date -->
-      </div>
-      <div class="col-sm-6">
-        <!-- Activity -->
-        <div class="toggle boxed">
-          <div class="toggle-header">
-            <a class="toggle-link collapsed" data-toggle="collapse" href='#toggle4'>
-              <span class="question">OMS</span>
-              <h5>Daily Meetings - (6 hrs)</h5>
-              <i></i>
-            </a>
-          </div>
-          <div id="toggle4" class="toggle-body collapse">
-            <div class="inner">
-              <p>Description</p>
-            </div>
-          </div>
-        </div>
-          <!--/ Activity -->
-      </div>
+    <%= render partial: 'header' %>
+
+    <div id="activity-list">
+      <% @activity_map.each do |date, activities| %>
+        <%= render partial: 'grouped_activity_list', locals: { date: date, activities: activities} %>
+      <% end %>
     </div>
   </div>
 </div>
