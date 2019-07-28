@@ -3,8 +3,13 @@
   <div class="toggle boxed">
     <div class="toggle-header">
       <a class="toggle-link collapsed" data-toggle="collapse" href='#toggle<%=activity.id%>'>
-        <span class="question"><%= activity.project_name %></span>
-        <h5><%= h truncate(activity.name, :length => 25) %></h5><h5 class="pull-right cards-hours"><%= activity.hours %> hrs</h5>
+        <div class="hidden-xs">
+          <span class="question"><%= activity.project_name %></span>
+          <h5><%= h truncate(activity.name, :length => 25) %></h5><h5 class="cards-hours"><%= activity.hours %> hrs</h5>
+        </div>
+        <div class="visible-xs">
+          <span class="question"><%= activity.project_name %></span><h5 class="cards-hours-short"><%= activity.hours %> hrs</h5>
+        </div>
         <i></i>
       </a>
     </div>

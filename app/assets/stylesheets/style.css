@@ -1320,6 +1320,11 @@ p{
 }
 
 .cards-hours{
+	  margin-left: 250px;
+    margin-right: 15px;
+}
+
+.cards-hours-short{
     margin-right: 15px;
 }
 /* Widget Twitter */
