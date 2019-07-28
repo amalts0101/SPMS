@@ -29,10 +29,12 @@
 
 <script type="text/javascript">
   // Config Options
-  var slideout = new Slideout({
-    'panel': document.getElementById('panel'),
-    'menu': document.getElementById('main'),
-    'padding': 256,
-    'tolerance': 70
+  $(document).ready(function($) {
+    var slideout = new Slideout({
+      'panel': document.getElementById('panel'),
+      'menu': document.getElementById('main'),
+      'padding': 256,
+      'tolerance': 70
+    });
   });
 </script>
