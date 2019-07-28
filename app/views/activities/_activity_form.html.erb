@@ -4,7 +4,7 @@
       <div class="col-sm-6">
         <div class="field_text full-width">
           <label for="user_login" class="label_title">Project</label>
-          <%= form.select(:project_id, projects.pluck(:name, :id), {selected: default_project.id}, {multiple: true, size: 1}) %>
+          <%= form.select(:project_id, projects.pluck(:name, :id), {selected: default_project&.id}, {multiple: true, size: 1}) %>
         </div>
       </div>
       <div class="col-sm-4">

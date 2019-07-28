@@ -14,13 +14,17 @@ img {
 }
 
 html,
-body {
+body,
+main {
     height: 100%;
 }
 
 body {
     font-family: 'Open Sans';
     color: #333;
+}
+
+body nav{
     text-align: center;
 }
 
