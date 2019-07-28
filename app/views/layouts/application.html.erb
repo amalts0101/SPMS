@@ -16,12 +16,19 @@
     <title>SPMS | Dashboard</title>
     <!-- Graph Builder -->
     <script type="text/javascript" src="https://www.google.com/jsapi"></script>
-  <link rel="manifest" href="/manifest.json" />
-<meta name="apple-mobile-web-app-capable" content="yes"></head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slideout/1.0.1/slideout.min.js"></script>
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+  </head>
 
   <body>
-    <%= render partial: 'shared/toast' %>
-    <%= yield %>
-    <%= render partial: 'shared/modal' %>
+
+    <%= render partial: 'shared/sidebar' %>
+
+    <main id="panel">
+       <%= render partial: 'shared/toast' %>
+        <%= yield %>
+        <%= render partial: 'shared/modal' %>
+    </main>
   </body>
 </html>
