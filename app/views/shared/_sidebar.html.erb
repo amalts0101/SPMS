@@ -1,0 +1,48 @@
+<nav id="main" class="menu slideout-menu slideout-menu-left">
+  <ul class="dropdown clearfix boxed" style="-webkit-box-shadow: none;box-shadow:none">
+    <li class="menu-level-0 full-width">
+      <%= link_to root_path do %>
+        <img src="/assets/logosquare.png" alt="">
+      <%end%>
+    </li>
+    <li class="menu-level-0 left-pad full-width">
+      <%= link_to root_path do %>
+        <i class="navbar-icon fa fa-home"></i><span>home</span>
+      <%end%>
+    </li>
+
+    <li class="menu-level-0 left-pad full-width">
+      <%= link_to projects_path do %>
+        <i class="navbar-icon fa fa-briefcase"></i><span>projects</span>
+      <% end %>
+    </li>
+    <li class="menu-level-0 left-pad full-width">
+      <%= link_to activities_path do %>
+        <i class="navbar-icon fa fa-plus-circle"></i><span>activities</span>
+      <% end %>
+    </li>
+    <li class="menu-level-0 left-pad full-width"><a href="#"><i class="navbar-icon fa fa-paper-plane"></i><span>sheets</span></a>
+      <ul class="submenu-1">
+        <li class="menu-level-1"><a href="#">new</a></li>
+        <li class="menu-level-1"><a href="#">pending approval</a></li>
+        <li class="menu-level-1"><a href="#">approved</a>
+      </ul>
+    </li>
+    <li class="menu-level-0 left-pad full-width"><a href="#"><i class="navbar-icon icon-menu4 fa fa-calendar"></i><span>calendar</span></a></li>
+  </ul>
+</nav>
+
+<script type="text/javascript">
+  // Config Options
+  $(document).ready(function($) {
+    var slideout = new Slideout({
+      'panel': document.getElementById('panel'),
+      'menu': document.getElementById('main'),
+      'padding': 256,
+      'tolerance': 70
+    });
+    $('.menu-level-0').click(function(){
+      slideout.close();
+    });
+  });
+</script>

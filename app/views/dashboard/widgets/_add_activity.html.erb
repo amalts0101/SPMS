@@ -1,16 +1,16 @@
 <!-- Contact form -->
 <div class="add-comment styled boxed" id="addcomments">
   <div class="comment-form">
-    <%= form_for Activity.new do |form| %>
+    <%= form_for Activity.new, remote: true do |form| %>
       <div class="form-inner">
         <div class="field_select">
-          <label class="label_title"><i class="icon-menu icon-menu6"></i>ADD ACTIVTIY</label>
+          <label class="label_title"><i class="icon-menu icon-menu6"></i>ADD ACTIVITY</label>
         </div>
         <div class = "field_text">
-          <%= form.select(:project_id, Project.pluck(:name, :id), {}, {multiple: true, size: 1}) %>
-        </div>    
+          <%= form.select(:project_id, projects.pluck(:name, :id), {selected: default_project&.id}, {multiple: true, size: 1}) %>
+        </div>
         <div class="field_text input_date adv_block">
-          <input type="text" name="activity[date]" class="inputField inputDate" value="Select Date" onfocus="if (this.value == 'Check in') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Check in';}" id="filter_date_in">
+          <input type="text" name="activity[date]" class="inputField inputDate" value="<%= Date.current.strftime('%B %d, %Y') %>" onfocus="if (this.value == 'Check in') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Check in';}" id="filter_date_in">
           <span class="input_icon"></span>
         </div>
         <div class="field_text"> 
@@ -37,7 +37,6 @@
    jQuery(document).ready(function($) {
       $("#filter_date_in").datepicker({
           dateFormat: 'MM dd, yy',
-          minDate: 0,
           showOtherMonths: true
       });
       jQuery('#activity_project_id').chosen({ width: "100%", max_selected_options: 1 });
