@@ -13,6 +13,10 @@ class User < ApplicationRecord
   accepts_nested_attributes_for :projects, :allow_destroy => true
 
   def total_activity_hours
-	self.activities.sum(:hours).to_f
+    self.activities.sum(:hours).to_f
+  end
+
+  def total_month_hours
+    activities.this_month.sum(:hours).to_f
   end
 end
