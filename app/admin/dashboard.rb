@@ -38,6 +38,20 @@ ActiveAdmin.register_page "Dashboard" do
       end
     end
 
+     section status_tag 'Roles'do
+      columns do
+        column do
+          panel "Roles" do
+            ul do
+              Role.last(5).map do |role|
+                li link_to(role.name, admin_role_path(role))
+              end
+            end
+          end
+        end
+      end
+    end
+
     #   column do
     #     panel "Info" do
     #       para "Welcome to ActiveAdmin."

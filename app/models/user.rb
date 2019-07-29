@@ -8,6 +8,8 @@ class User < ApplicationRecord
   has_many :user_projects
   has_many :projects, through: :user_projects
   has_many :activities
+  has_many :user_roles
+  has_many :roles, through: :user_roles
   accepts_nested_attributes_for :projects, :allow_destroy => true
 
   def total_activity_hours
