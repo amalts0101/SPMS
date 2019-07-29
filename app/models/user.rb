@@ -15,6 +15,6 @@ class User < ApplicationRecord
   end
 
   def total_month_hours
-   activities.this_month.sum(:hours).to_f
+    activities.this_month.sum(:hours).to_f
   end
 end
