@@ -9,5 +9,14 @@ class Activity < ApplicationRecord
   def project_name
   	self.project.name
   end
+
+  def update_activity(params)
+    self.name = params[:name]
+    self.hours = params[:hours]
+    self.date = Date.strptime(params[:date], "%B %d, %Y")
+    self.project_id = params[:project_id].map(&:presence).compact.first
+    self.save
+    self
+  end
 end
 
