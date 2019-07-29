@@ -3,15 +3,15 @@
     <div class="widget-title">
         <div class="avatar" style="width: 70px;height: 70px;"><img src="assets/sheets.jpg" alt="" style="width: 54px;height: 54px;" /></div>
         <h5>Recent Activity</h5>
-        
     </div>
     <div class="inner">
        <% @activities.each do |activity|%>
+       <ul>
          <li>
-           <a> <i class="ico-cat ico-cat3"></i>
+           <a></i>
            <span><%=activity.name%></span>
-           <span> Hours-<%=activity.hours%></span></a> 
         </li>
+      </ul>
        <%end%>
     </div>
 </div>
